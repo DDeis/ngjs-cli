@@ -1,5 +1,5 @@
 {
-  "name": "ngjs-scripts",
+  "name": "@ngjs/scripts",
   "version": "0.0.0",
   "description": "",
   "engines": {
@@ -16,6 +16,8 @@
     "@babel/node": "7.0.0-rc.1",
     "@babel/polyfill": "7.0.0-rc.1",
     "@babel/preset-env": "7.0.0-rc.1",
+    "@ngjs/babel-preset-ngjs-app": "^0.0.0",
+    "@ngjs/eslint-config-ngjs-app": "^0.0.0",
     "angular-mocks": "^1.7.3",
     "autoprefixer": "^9.1.0",
     "babel-core": "7.0.0-bridge.0",
@@ -24,7 +26,6 @@
     "babel-loader": "8.0.0-beta.4",
     "babel-plugin-angularjs-annotate": "0.9.0",
     "babel-plugin-lodash": "3.3.4",
-    "babel-preset-ngjs-app": "^0.0.0",
     "browser-sync": "2.24.6",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "chalk": "2.4.1",
@@ -35,7 +36,6 @@
     "css-loader": "1.0.0",
     "eslint": "5.3.0",
     "eslint-config-airbnb-base": "13.1.0",
-    "eslint-config-ngjs-app": "^0.0.0",
     "eslint-config-prettier": "3.0.1",
     "eslint-loader": "^2.1.0",
     "eslint-plugin-angular": "3.3.0",

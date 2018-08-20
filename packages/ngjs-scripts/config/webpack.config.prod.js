@@ -208,7 +208,7 @@ module.exports = {
               // TODO: consider separate config for production,
               // e.g. to enable no-console and no-debugger only in production.
               baseConfig: {
-                extends: [require.resolve("eslint-config-ngjs-app")]
+                extends: [require.resolve("@ngjs/eslint-config-ngjs-app")]
               },
               // @remove-on-eject-begin
               ignore: false,
@@ -252,7 +252,7 @@ module.exports = {
                   // @remove-on-eject-begin
                   babelrc: false,
                   // @remove-on-eject-end
-                  presets: [require.resolve("babel-preset-ngjs-app")],
+                  presets: [require.resolve("@ngjs/babel-preset-ngjs-app")],
                   plugins: [],
                   compact: true,
                   highlightCode: true

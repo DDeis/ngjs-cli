@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-ngjs-app",
+  "name": "@ngjs/eslint-config-ngjs-app",
   "version": "0.0.0",
   "description": "ESLint configuration used by ngjs",
   "license": "MIT",

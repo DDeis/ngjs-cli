@@ -1,5 +1,5 @@
 {
-  "name": "babel-preset-ngjs-app",
+  "name": "@ngjs/babel-preset-ngjs-app",
   "version": "0.0.0",
   "description": "ESLint configuration used by ngjs",
   "license": "MIT",

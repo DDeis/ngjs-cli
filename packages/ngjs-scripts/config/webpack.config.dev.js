@@ -168,7 +168,7 @@ module.exports = {
               // formatter: eslintFormatter,
               eslintPath: require.resolve("eslint"),
               baseConfig: {
-                extends: [require.resolve("eslint-config-ngjs-app")]
+                extends: [require.resolve("@ngjs/eslint-config-ngjs-app")]
               },
               // @remove-on-eject-begin
               ignore: false,
@@ -215,7 +215,7 @@ module.exports = {
               {
                 loader: require.resolve("babel-loader"),
                 options: {
-                  presets: [require.resolve("babel-preset-ngjs-app")],
+                  presets: [require.resolve("@ngjs/babel-preset-ngjs-app")],
                   plugins: [],
                   // This is a feature of `babel-loader` for webpack (not Babel itself).
                   // It enables caching results in ./node_modules/.cache/babel-loader/
