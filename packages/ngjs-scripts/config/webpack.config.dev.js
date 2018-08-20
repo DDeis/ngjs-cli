@@ -13,6 +13,8 @@ const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const paths = require('./paths');
 
+require('dotenv').config();
+
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
 const publicPath = '/';
@@ -404,18 +406,18 @@ module.exports = {
   // our own hints via the FileSizeReporter
   performance: false,
 
-  devServer: {
-    contentBase: paths.appSrc,
-    watchContentBase: true,
-    hot: true,
-    publicPath,
-    compress: true,
-    port: 9000,
-    proxy: {
-      '/api': {
-        target: 'http://vspar-iris-v-em-21.afp.com',
-        secure: false,
-      },
-    },
-  },
+  // devServer: {
+  //   contentBase: paths.appSrc,
+  //   watchContentBase: true,
+  //   hot: true,
+  //   publicPath,
+  //   compress: true,
+  //   port: 9000,
+  //   proxy: {
+  //     '/api': {
+  //       target: 'http://...',
+  //       secure: false,
+  //     },
+  //   },
+  // },
 };
