@@ -1,12 +1,15 @@
 {
   "name": "@ngjs/scripts",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.0",
   "description": "",
   "engines": {
     "node": ">=6"
   },
   "bin": {
     "ngjs-scripts": "./bin/ngjs-scripts.js"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "author": "",
   "license": "MIT",
@@ -16,8 +19,8 @@
     "@babel/node": "7.0.0-rc.1",
     "@babel/polyfill": "7.0.0-rc.1",
     "@babel/preset-env": "7.0.0-rc.1",
-    "@ngjs/babel-preset-ngjs-app": "^0.0.0",
-    "@ngjs/eslint-config-ngjs-app": "^0.0.0",
+    "@ngjs/babel-preset-ngjs-app": "^0.0.1-alpha.0",
+    "@ngjs/eslint-config-ngjs-app": "^0.0.1-alpha.0",
     "angular-mocks": "^1.7.3",
     "autoprefixer": "^9.1.0",
     "babel-core": "7.0.0-bridge.0",
