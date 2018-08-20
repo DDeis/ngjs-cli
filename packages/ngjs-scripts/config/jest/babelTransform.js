@@ -6,13 +6,13 @@
  * LICENSE file in the root directory of this source tree.
  */
 // @remove-on-eject-end
-"use strict";
+'use strict';
 
-const babelJest = require("babel-jest");
+const babelJest = require('babel-jest');
 
 module.exports = babelJest.createTransformer({
-  presets: [require.resolve("babel-preset-ngjs-app")],
+  presets: [require.resolve('@ddeis/babel-preset-ngjs-app')],
   // @remove-on-eject-begin
-  babelrc: false
+  babelrc: false,
   // @remove-on-eject-end
 });

@@ -28,7 +28,7 @@ const publicUrl = '';
 process.env.NODE_PATH = (process.env.NODE_PATH || '')
   .split(path.delimiter)
   .filter(folder => folder && !path.isAbsolute(folder))
-  .map(folder => path.resolve(appDirectory, folder))
+  .map(folder => path.resolve(paths.appDirectory, folder))
   .join(path.delimiter);
 
 // style files regexes

@@ -1,8 +1,8 @@
-"use strict";
+'use strict';
 
-const path = require("path");
-const fs = require("fs");
-const url = require("url");
+const path = require('path');
+const fs = require('fs');
+const url = require('url');
 
 // Make sure any symlinks in the project folder are resolved:
 // https://github.com/facebook/create-react-app/issues/637
@@ -12,7 +12,7 @@ const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 const envPublicUrl = process.env.PUBLIC_URL;
 
 function ensureSlash(inputPath, needsSlash) {
-  const hasSlash = inputPath.endsWith("/");
+  const hasSlash = inputPath.endsWith('/');
   if (hasSlash && !needsSlash) {
     return inputPath.substr(0, inputPath.length - 1);
   }
@@ -34,24 +34,25 @@ const getPublicUrl = appPackageJson =>
 function getServedPath(appPackageJson) {
   const publicUrl = getPublicUrl(appPackageJson);
   const servedUrl =
-    envPublicUrl || (publicUrl ? url.parse(publicUrl).pathname : "/");
+    envPublicUrl || (publicUrl ? url.parse(publicUrl).pathname : '/');
   return ensureSlash(servedUrl, true);
 }
 
 // config after eject: we're in ./config/
 module.exports = {
-  dotenv: resolveApp(".env"),
-  appPath: resolveApp("."),
-  appBuild: resolveApp("build"),
-  appPublic: resolveApp("public"),
-  appHtml: resolveApp("src/index.ejs"),
-  appIndexJs: resolveApp("src/index.js"),
-  appPackageJson: resolveApp("package.json"),
-  appSrc: resolveApp("src"),
+  appDirectory,
+  dotenv: resolveApp('.env'),
+  appPath: resolveApp('.'),
+  appBuild: resolveApp('build'),
+  appPublic: resolveApp('public'),
+  appHtml: resolveApp('src/index.ejs'),
+  appIndexJs: resolveApp('src/index.js'),
+  appPackageJson: resolveApp('package.json'),
+  appSrc: resolveApp('src'),
   // testsSetup: resolveApp('src/setupTests.js'),
-  appNodeModules: resolveApp("node_modules"),
-  publicUrl: getPublicUrl(resolveApp("package.json")),
-  servedPath: getServedPath(resolveApp("package.json"))
+  appNodeModules: resolveApp('node_modules'),
+  publicUrl: getPublicUrl(resolveApp('package.json')),
+  servedPath: getServedPath(resolveApp('package.json')),
 };
 
 module.exports.srcPaths = [module.exports.appSrc];
