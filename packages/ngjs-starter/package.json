@@ -19,8 +19,8 @@
     "normalize.css": "8.0.0"
   },
   "devDependencies": {
-    "@ngjs/eslint-config-ngjs-app": "^0.0.1-alpha.0",
-    "@ngjs/scripts": "^0.0.1-alpha.0",
+    "@ddeis/eslint-config-ngjs-app": "^0.0.1-alpha.0",
+    "@ddeis/ngjs-scripts": "^0.0.1-alpha.0",
     "eslint": "^5.4.0",
     "husky": "^1.0.0-rc.13",
     "lint-staged": "^7.2.2"
@@ -28,7 +28,7 @@
   "keywords": [],
   "eslintConfig": {
     "extends": [
-      "@ngjs/ngjs-app"
+      "@ddeis/ngjs-app"
     ]
   },
   "husky": {

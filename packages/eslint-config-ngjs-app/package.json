@@ -1,5 +1,5 @@
 {
-  "name": "@ngjs/eslint-config-ngjs-app",
+  "name": "@ddeis/eslint-config-ngjs-app",
   "version": "0.0.1-alpha.0",
   "description": "ESLint configuration used by ngjs",
   "license": "MIT",
@@ -16,5 +16,5 @@
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-prettier": "2.6.2"
   },
-  "gitHead": "c4420b2cae55fde0e673cf9e9be71093537b90c0"
+  "gitHead": "87c32aa862a6f003f774ad27b0b118e38ee4adaa"
 }

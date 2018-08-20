@@ -1,5 +1,5 @@
 {
-  "name": "@ngjs/babel-preset-ngjs-app",
+  "name": "@ddeis/babel-preset-ngjs-app",
   "version": "0.0.1-alpha.0",
   "description": "ESLint configuration used by ngjs",
   "license": "MIT",
@@ -13,5 +13,5 @@
     "babel-plugin-angularjs-annotate": "0.9.0",
     "babel-plugin-lodash": "3.3.4"
   },
-  "gitHead": "c4420b2cae55fde0e673cf9e9be71093537b90c0"
+  "gitHead": "87c32aa862a6f003f774ad27b0b118e38ee4adaa"
 }
