@@ -1,6 +1,6 @@
 {
   "name": "@ddeis/ngjs-scripts",
-  "version": "0.0.2-alpha.3",
+  "version": "0.0.2-alpha.4",
   "description": "",
   "engines": {
     "node": ">=6"
@@ -19,8 +19,8 @@
     "@babel/node": "7.0.0-rc.1",
     "@babel/polyfill": "7.0.0-rc.1",
     "@babel/preset-env": "7.0.0-rc.1",
-    "@ddeis/babel-preset-ngjs-app": "^0.0.2-alpha.3",
-    "@ddeis/eslint-config-ngjs-app": "^0.0.2-alpha.3",
+    "@ddeis/babel-preset-ngjs-app": "^0.0.2-alpha.4",
+    "@ddeis/eslint-config-ngjs-app": "^0.0.2-alpha.4",
     "angular-mocks": "^1.7.3",
     "autoprefixer": "^9.1.0",
     "babel-core": "7.0.0-bridge.0",

@@ -1,6 +1,6 @@
 {
   "name": "@ddeis/eslint-config-ngjs-app",
-  "version": "0.0.2-alpha.3",
+  "version": "0.0.2-alpha.4",
   "description": "ESLint configuration used by ngjs",
   "license": "MIT",
   "main": "index.js",
