@@ -1,5 +1,4 @@
 import 'normalize.css';
-import 'bootstrap/scss/bootstrap.scss';
 
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
