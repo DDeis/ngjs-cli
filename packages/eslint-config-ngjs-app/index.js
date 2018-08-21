@@ -1,4 +1,8 @@
 "use strict";
+const fs = require("fs");
+const path = require("path");
+
+const appDirectory = fs.realpathSync(process.cwd());
 
 module.exports = {
   root: true,
@@ -36,19 +40,12 @@ module.exports = {
 
   settings: {
     "import/resolver": {
-      // webpack: {
-      //   config: { resolve: { extensions: [".js", ".jsx"] } },
-      // },
-      // node: {
-      //   //     moduleDirectory: ['node_modules', 'src/'],
-      //   extensions: [".js"],
-      // },
-      configurable: {
-        "@components": "./src/app/components/",
-        "@common": "./src/app/common/",
-        "@app": "./src/app/",
-        "@src": "./src/",
-      },
+      alias: [
+        ["@src", path.resolve(appDirectory, "src")],
+        ["@app", path.resolve(appDirectory, "src", "app")],
+        ["@common", path.resolve(appDirectory, "src", "app", "common")],
+        ["@components", path.resolve(appDirectory, "src", "app", "components")],
+      ],
     },
   },
 

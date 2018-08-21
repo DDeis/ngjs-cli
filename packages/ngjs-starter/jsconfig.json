@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "allowSyntheticDefaultImports": false,
+    "baseUrl": "./",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@common/*": ["src/common/*"],
+      "@app/*": ["src/app/*"],
+      "@src/*": ["src/*"]
+    }
+  },
+  "exclude": ["node_modules", "build"]
+}
