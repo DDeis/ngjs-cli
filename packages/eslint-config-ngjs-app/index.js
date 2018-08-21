@@ -11,7 +11,7 @@ module.exports = {
 
   extends: [
     "eslint:recommended",
-    "plugin:prettier/recommended",
+    // "plugin:prettier/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
     "airbnb-base",
@@ -50,14 +50,14 @@ module.exports = {
   },
 
   rules: {
-    "prettier/prettier": [
-      "error",
-      {
-        singleQuote: true,
-        trailingComma: "all",
-        arrowParens: "avoid",
-      },
-    ],
+    // "prettier/prettier": [
+    //   "error",
+    //   {
+    //     singleQuote: true,
+    //     trailingComma: "all",
+    //     arrowParens: "avoid",
+    //   },
+    // ],
     "arrow-parens": [
       "error",
       "as-needed",
