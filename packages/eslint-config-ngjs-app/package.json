@@ -16,5 +16,9 @@
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-prettier": "2.6.2"
   },
-  "gitHead": "87c32aa862a6f003f774ad27b0b118e38ee4adaa"
+  "gitHead": "87c32aa862a6f003f774ad27b0b118e38ee4adaa",
+  "dependencies": {
+    "eslint-import-resolver-configurable": "^0.1.3",
+    "eslint-plugin-import": "^2.14.0"
+  }
 }

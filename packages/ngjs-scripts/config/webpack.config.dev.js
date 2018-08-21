@@ -1,31 +1,31 @@
-const autoprefixer = require('autoprefixer');
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const autoprefixer = require("autoprefixer");
+const path = require("path");
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 // const CopyWebpackPlugin = require("copy-webpack-plugin");
-const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
+const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 // const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 // const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 // const eslintFormatter = require('react-dev-utils/eslintFormatter');
 // const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 // const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent');
 // const getClientEnvironment = require('./env');
-const ManifestPlugin = require('webpack-manifest-plugin');
-const paths = require('./paths');
+const ManifestPlugin = require("webpack-manifest-plugin");
+const paths = require("./paths");
 
-require('dotenv').config();
+require("dotenv").config();
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
-const publicPath = '/';
+const publicPath = "/";
 // `publicUrl` is just like `publicPath`, but we will provide it to our app
 // as %PUBLIC_URL% in `index.html` and `process.env.PUBLIC_URL` in JavaScript.
 // Omit trailing slash as %PUBLIC_PATH%/xyz looks better than %PUBLIC_PATH%xyz.
-const publicUrl = '';
+const publicUrl = "";
 // Get environment variables to inject into our app.
 // const env = getClientEnvironment(publicUrl);
 
-process.env.NODE_PATH = (process.env.NODE_PATH || '')
+process.env.NODE_PATH = (process.env.NODE_PATH || "")
   .split(path.delimiter)
   .filter(folder => folder && !path.isAbsolute(folder))
   .map(folder => path.resolve(paths.appDirectory, folder))
@@ -40,24 +40,24 @@ const sassModuleRegex = /\.module\.(scss|sass)$/;
 // common function to get style loaders
 const getStyleLoaders = (cssOptions, preProcessor) => {
   const loaders = [
-    require.resolve('style-loader'),
+    require.resolve("style-loader"),
     {
-      loader: require.resolve('css-loader'),
+      loader: require.resolve("css-loader"),
       options: cssOptions,
     },
     {
       // Options for PostCSS as we reference these options twice
       // Adds vendor prefixing based on your specified browser support in
       // package.json
-      loader: require.resolve('postcss-loader'),
+      loader: require.resolve("postcss-loader"),
       options: {
         // Necessary for external CSS imports to work
         // https://github.com/facebook/create-react-app/issues/2677
-        ident: 'postcss',
+        ident: "postcss",
         plugins: () => [
-          require('postcss-flexbugs-fixes'),
+          require("postcss-flexbugs-fixes"),
           autoprefixer({
-            flexbox: 'no-2009',
+            flexbox: "no-2009",
           }),
         ],
       },
@@ -73,18 +73,18 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
 // It is focused on developer experience and fast rebuilds.
 // The production configuration is different and lives in a separate file.
 module.exports = {
-  mode: 'development',
+  mode: "development",
   // You may want 'eval' instead if you prefer to see the compiled output in DevTools.
   // See the discussion in https://github.com/facebook/create-react-app/issues/343.
-  devtool: 'cheap-module-source-map',
+  devtool: "cheap-module-source-map",
   // These are the "entry points" to our application.
   // This means they will be the "root" imports that are included in JS bundle.
   // The first two entry points enable "hot" CSS and auto-refreshes for JS.
   entry: [
     // must be first entry to properly set public path
-    './src/webpack-public-path',
-    'webpack-hot-middleware/client?reload=true',
-    '@babel/polyfill',
+    "./src/webpack-public-path",
+    "webpack-hot-middleware/client?reload=true",
+    "@babel/polyfill",
     // Defining path seems necessary for this to work consistently on Windows machines.
     // We ship a few polyfills by default:
     // require.resolve('./polyfills'),
@@ -111,22 +111,22 @@ module.exports = {
     // This does not produce a real file. It's just the virtual path that is
     // served by WebpackDevServer in development. This is the JS bundle
     // containing code from all our entry points, and the Webpack runtime.
-    filename: 'static/js/bundle.js',
+    filename: "static/js/bundle.js",
     // There are also additional JS chunk files if you use code splitting.
-    chunkFilename: 'static/js/[name].chunk.js',
+    chunkFilename: "static/js/[name].chunk.js",
     // This is the URL that app is served from. We use "/" in development.
     publicPath,
     // Point sourcemap entries to original disk location (format as URL on Windows)
     devtoolModuleFilenameTemplate: info =>
-      path.resolve(info.absoluteResourcePath).replace(/\\/g, '/'),
+      path.resolve(info.absoluteResourcePath).replace(/\\/g, "/"),
   },
   optimization: {
     // Automatically split vendor and commons
     // https://twitter.com/wSokra/status/969633336732905474
     // https://medium.com/webpack/webpack-4-code-splitting-chunk-graph-and-the-splitchunks-optimization-be739a861366
     splitChunks: {
-      chunks: 'all',
-      name: 'vendors',
+      chunks: "all",
+      name: "vendors",
     },
     // Keep the runtime chunk seperated to enable long term caching
     // https://twitter.com/wSokra/status/969679223278505985
@@ -137,7 +137,7 @@ module.exports = {
     // We placed these paths second because we want `node_modules` to "win"
     // if there are any conflicts. This matches Node resolution mechanism.
     // https://github.com/facebook/create-react-app/issues/253
-    modules: ['node_modules'].concat(
+    modules: ["node_modules"].concat(
       // It is guaranteed to exist because we tweak it in `env.js`
       process.env.NODE_PATH.split(path.delimiter).filter(Boolean),
     ),
@@ -147,8 +147,8 @@ module.exports = {
     // https://github.com/facebook/create-react-app/issues/290
     // `web` extension prefixes have been added for better support
     // for React Native Web.
-    extensions: ['.js', '.json'],
-    alias: {},
+    extensions: [".js", ".json"],
+    alias: require("./webpack.config.alias"),
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
       // This often causes confusion because we only process files within src/ with babel.
@@ -168,21 +168,21 @@ module.exports = {
       // It's important to do this before Babel processes the JS.
       {
         test: /\.js$/,
-        enforce: 'pre',
+        enforce: "pre",
         use: [
           {
             options: {
               // formatter: eslintFormatter,
-              eslintPath: require.resolve('eslint'),
+              eslintPath: require.resolve("eslint"),
               baseConfig: {
-                extends: [require.resolve('@ddeis/eslint-config-ngjs-app')],
+                extends: [require.resolve("@ddeis/eslint-config-ngjs-app")],
               },
               // @remove-on-eject-begin
               ignore: false,
               useEslintrc: false,
               // @remove-on-eject-end
             },
-            loader: require.resolve('eslint-loader'),
+            loader: require.resolve("eslint-loader"),
           },
         ],
         include: paths.srcPaths,
@@ -198,10 +198,10 @@ module.exports = {
           // A missing `test` is equivalent to a match.
           {
             test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-            loader: require.resolve('url-loader'),
+            loader: require.resolve("url-loader"),
             options: {
               limit: 10000,
-              name: 'static/media/[name].[hash:8].[ext]',
+              name: "static/media/[name].[hash:8].[ext]",
             },
           },
           // Process application JS with Babel.
@@ -214,15 +214,15 @@ module.exports = {
               // This loader parallelizes code compilation, it is optional but
               // improves compile time on larger projects
               {
-                loader: require.resolve('thread-loader'),
+                loader: require.resolve("thread-loader"),
                 options: {
                   poolTimeout: Infinity, // keep workers alive for more effective watch mode
                 },
               },
               {
-                loader: require.resolve('babel-loader'),
+                loader: require.resolve("babel-loader"),
                 options: {
-                  presets: [require.resolve('@ddeis/babel-preset-ngjs-app')],
+                  presets: [require.resolve("@ddeis/babel-preset-ngjs-app")],
                   plugins: [],
                   // This is a feature of `babel-loader` for webpack (not Babel itself).
                   // It enables caching results in ./node_modules/.cache/babel-loader/
@@ -233,7 +233,7 @@ module.exports = {
               },
             ],
           },
-          { test: /\.html$/, use: ['raw-loader'] },
+          { test: /\.html$/, use: ["raw-loader"] },
           // Process any JS outside of the app with Babel.
           // Unlike the application JS, we only compile the standard ES features.
           // {
@@ -290,7 +290,7 @@ module.exports = {
           {
             test: sassRegex,
             exclude: sassModuleRegex,
-            use: getStyleLoaders({ importLoaders: 2 }, 'sass-loader'),
+            use: getStyleLoaders({ importLoaders: 2 }, "sass-loader"),
           },
           // Adds support for CSS Modules, but using SASS
           // using the extension .module.scss or .module.sass
@@ -302,7 +302,7 @@ module.exports = {
                 modules: true,
                 // getLocalIdent: getCSSModuleLocalIdent
               },
-              'sass-loader',
+              "sass-loader",
             ),
           },
 
@@ -312,14 +312,14 @@ module.exports = {
           // This loader doesn't use a "test" so it will catch all modules
           // that fall through the other loaders.
           {
-            loader: require.resolve('file-loader'),
+            loader: require.resolve("file-loader"),
             // Exclude `js` files to keep "css" loader working as it injects
             // its runtime that would otherwise be processed through "file" loader.
             // Also exclude `html` and `json` extensions so they get processed
             // by webpacks internal loaders.
             exclude: [/\.js$/, /\.ejs$/, /\.html$/, /\.json$/],
             options: {
-              name: 'static/media/[name].[hash:8].[ext]',
+              name: "static/media/[name].[hash:8].[ext]",
             },
           },
         ],
@@ -388,7 +388,7 @@ module.exports = {
     // to their corresponding output file so that tools can pick it up without
     // having to parse `index.html`.
     new ManifestPlugin({
-      fileName: 'asset-manifest.json',
+      fileName: "asset-manifest.json",
       publicPath,
     }),
   ],
@@ -396,11 +396,11 @@ module.exports = {
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
   node: {
-    dgram: 'empty',
-    fs: 'empty',
-    net: 'empty',
-    tls: 'empty',
-    child_process: 'empty',
+    dgram: "empty",
+    fs: "empty",
+    net: "empty",
+    tls: "empty",
+    child_process: "empty",
   },
   // Turn off performance processing because we utilize
   // our own hints via the FileSizeReporter
