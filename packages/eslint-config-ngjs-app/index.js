@@ -34,23 +34,23 @@ module.exports = {
     },
   },
 
-  // settings: {
-  //   "import/resolver": {
-  //     webpack: {
-  //       config: { resolve: { extensions: [".js", ".jsx"] } },
-  //     },
-  //     node: {
-  //       //     moduleDirectory: ['node_modules', 'src/'],
-  //       extensions: [".js"],
-  //     },
-  //     configurable: {
-  //       "@components": "./src/app/components/",
-  //       "@common": "./src/app/common/",
-  //       "@app": "./src/app/",
-  //       "@src": "./src/",
-  //     },
-  //   },
-  // },
+  settings: {
+    "import/resolver": {
+      // webpack: {
+      //   config: { resolve: { extensions: [".js", ".jsx"] } },
+      // },
+      // node: {
+      //   //     moduleDirectory: ['node_modules', 'src/'],
+      //   extensions: [".js"],
+      // },
+      configurable: {
+        "@components": "./src/app/components/",
+        "@common": "./src/app/common/",
+        "@app": "./src/app/",
+        "@src": "./src/",
+      },
+    },
+  },
 
   rules: {
     "prettier/prettier": [

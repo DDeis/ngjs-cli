@@ -14,11 +14,8 @@
     "eslint-config-prettier": "3.0.1",
     "eslint-plugin-angular": "3.3.0",
     "eslint-plugin-import": "2.14.0",
-    "eslint-plugin-prettier": "2.6.2"
+    "eslint-plugin-prettier": "2.6.2",
+    "eslint-import-resolver-configurable": "0.1.3"
   },
-  "gitHead": "87c32aa862a6f003f774ad27b0b118e38ee4adaa",
-  "dependencies": {
-    "eslint-import-resolver-configurable": "^0.1.3",
-    "eslint-plugin-import": "^2.14.0"
-  }
+  "gitHead": "87c32aa862a6f003f774ad27b0b118e38ee4adaa"
 }
