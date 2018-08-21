@@ -1,10 +1,4 @@
-import 'normalize.css';
-
-import angular from 'angular';
-import appComponent from './app.component';
-import CommonModule from './common/common';
-import PagesModule from './app/pages';
-
-angular
-  .module('app', [CommonModule.name, PagesModule.name])
-  .component('app', appComponent);
+// This is the webpack entrypoint,
+// We import or app root module so webpack knows about it
+// You do not need to modify this file
+import './app/app.module';
