@@ -1,5 +1,6 @@
 module.exports = function() {
   return {
+    "plugins": [require("@babel/plugin-proposal-class-properties")],
     "env": {
       "development": {
         "presets": [require("@babel/preset-env").default],
