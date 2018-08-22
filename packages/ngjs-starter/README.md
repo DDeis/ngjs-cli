@@ -13,6 +13,24 @@ npm i
 npm start # run build | test
 ```
 
+## Notes
+
+### Webpack aliases
+Available webpack aliases:
+- `@src`: `/src'
+- `@app`: `/src/app'
+- `@common`: `/src/app/common'
+- `@components`: `/src/app/components'
+- `styles`: `/src/styles'
+
+Instead of `import '../../common/directive` you can do `import '@common/directive`
+
+### Modules
+Do not forget to export `.name` of angular modules.
+
+### Styles
+Import an util sass file from the style folder in a component sass file, e.g: `@import '~styles/variables';`
+
 ## Proxy
 
 Create a `proxy.conf.js` file in the config folder from sample.
