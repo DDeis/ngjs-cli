@@ -2,7 +2,9 @@
 
 const autoprefixer = require('autoprefixer');
 const path = require('path');
+const fs = require('fs');
 const webpack = require('webpack');
+const merge = require('webpack-merge');
 // const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
@@ -88,7 +90,7 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
 // This is the production configuration.
 // It compiles slowly and is focused on producing a fast and minimal bundle.
 // The development configuration is different and lives in a separate file.
-module.exports = {
+const webpackProdConfig = {
   mode: 'production',
   // Don't attempt to continue if there are any errors.
   bail: true,
@@ -445,3 +447,10 @@ module.exports = {
   // our own hints via the FileSizeReporter
   performance: false,
 };
+
+
+const customWebpackConfigPath = path.resolve(paths.appDirectory, 'config', 'webpack.config.js');
+const customWebpackProdConfigPath = path.resolve(paths.appDirectory, 'config', 'webpack.config.prod.js');
+const customWebpackConfig = fs.existsSync(customWebpackConfigPath) ? require(customWebpackConfigPath) : {};
+const customWebpackProdConfig = fs.existsSync(customWebpackProdConfigPath) ? require(customWebpackProdConfigPath) : {};
+module.exports = merge(webpackProdConfig, customWebpackConfig, customWebpackProdConfig);

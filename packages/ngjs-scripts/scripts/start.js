@@ -32,7 +32,7 @@ let middleware = [
 
     // These settings suppress noisy webpack output so only errors are displayed to the console.
     noInfo: true,
-    quiet: false,
+    quiet: true,
     stats: {
       assets: false,
       colors: true,

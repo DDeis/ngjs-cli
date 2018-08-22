@@ -1,6 +1,8 @@
 const autoprefixer = require("autoprefixer");
 const path = require("path");
+const fs = require('fs');
 const webpack = require("webpack");
+const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 // const CopyWebpackPlugin = require("copy-webpack-plugin");
 const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
@@ -11,6 +13,9 @@ const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 // const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent');
 // const getClientEnvironment = require('./env');
 const ManifestPlugin = require("webpack-manifest-plugin");
+// const Dashboard = require('webpack-dashboard');
+// const DashboardPlugin = require('webpack-dashboard/plugin');
+// const dashboard = new Dashboard();
 const paths = require("./paths");
 
 require("dotenv").config();
@@ -72,7 +77,7 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
 // The production configuration is different and lives in a separate file.
-module.exports = {
+const webpackDevConfig = {
   mode: "development",
   // You may want 'eval' instead if you prefer to see the compiled output in DevTools.
   // See the discussion in https://github.com/facebook/create-react-app/issues/343.
@@ -391,6 +396,7 @@ module.exports = {
       fileName: "asset-manifest.json",
       publicPath,
     }),
+    // new DashboardPlugin(dashboard.setData),
   ],
 
   // Some libraries import Node modules but don't use them in the browser.
@@ -421,3 +427,9 @@ module.exports = {
   //   },
   // },
 };
+
+const customWebpackConfigPath = path.resolve(paths.appDirectory, 'config', 'webpack.config.js');
+const customWebpackDevConfigPath = path.resolve(paths.appDirectory, 'config', 'webpack.config.dev.js');
+const customWebpackConfig = fs.existsSync(customWebpackConfigPath) ? require(customWebpackConfigPath) : {};
+const customWebpackDevConfig = fs.existsSync(customWebpackDevConfigPath) ? require(customWebpackDevConfigPath) : {};
+module.exports = merge(webpackDevConfig, customWebpackConfig, customWebpackDevConfig);

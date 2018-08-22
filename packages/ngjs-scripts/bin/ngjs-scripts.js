@@ -20,7 +20,7 @@ switch (script) {
   case "start":
   case "test": {
     const result = spawn.sync(
-      "node",
+      "node", // script === "start" ? "webpack-dashboard -- node" : "node",
       nodeArgs.concat(require.resolve("../scripts/" + script)),
       // .concat(args.slice(scriptIndex + 1)),
       { stdio: "inherit" }
