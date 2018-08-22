@@ -1,7 +1,7 @@
 {
   "name": "ngjs-starter",
   "private": true,
-  "version": "0.0.2-alpha.4",
+  "version": "0.0.2",
   "description": "",
   "engines": {
     "npm": ">=3"
@@ -21,8 +21,8 @@
     "normalize.css": "8.0.0"
   },
   "devDependencies": {
-    "@ddeis/eslint-config-ngjs-app": "^0.0.2-alpha.4",
-    "@ddeis/ngjs-scripts": "^0.0.2-alpha.4",
+    "@ddeis/eslint-config-ngjs-app": "^0.0.2",
+    "@ddeis/ngjs-scripts": "^0.0.2",
     "eslint": "^5.4.0",
     "husky": "^1.0.0-rc.13",
     "lint-staged": "^7.2.2"
