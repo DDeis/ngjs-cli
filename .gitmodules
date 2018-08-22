@@ -1,0 +1,3 @@
+[submodule "packages/ngjs-cli-starter"]
+	path = packages/ngjs-cli-starter
+	url = https://github.com/DDeis/ngjs-cli-starter
