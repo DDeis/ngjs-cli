@@ -9,4 +9,5 @@ module.exports = {
   "@app": path.resolve(paths.appSrc, "app"),
   "@common": path.resolve(paths.appSrc, "app", "common"),
   "@components": path.resolve(paths.appSrc, "app", "components"),
+  "styles": path.resolve(paths.appSrc, "styles"),
 };
